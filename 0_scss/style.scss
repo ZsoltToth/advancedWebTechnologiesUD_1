@@ -1,0 +1,6 @@
+$primary-color : red;
+$secondary-color : lightblue;
+html body{
+  color : $primary-color;
+  background-color: $secondary-color;
+}
