@@ -1,6 +1,10 @@
-$primary-color : red;
-$secondary-color : lightblue;
+@import "variables";
+
 html body{
   color : $primary-color;
   background-color: $secondary-color;
+}
+
+h1 {
+  color : darken($primary-color, 10);
 }
