@@ -5,6 +5,7 @@
     "node-sass": "^4.13.1"
   },
   "scripts": {
-    "css" :"node-sass style.scss style.css"
+    "css" :"node-sass style.scss style.css",
+    "css-deploy" :"node-sass --output-style compressed style.scss style.css"
   }
 }
