@@ -32,6 +32,21 @@ class GrossPriceCalculator{
         }
     }
 
+    totalGrossPrice_promise(products){
+        return new Promise((resolve, reject)=>{
+            resolve(products.reduce((total, cur)=>{
+                if(cur.price <= 0.0){
+                    reject(`The price of ${cur.name} is negative (${cur.price})!`);
+                }
+                if(cur.isTaxable){
+                    return total + cur.price * (100.0 + this.vatRate) / 100.0
+                }
+                return total + cur.price;
+            },0));
+        });
+
+    }
+
 }
 
 module.exports = new GrossPriceCalculator();
