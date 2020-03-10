@@ -5,9 +5,12 @@ var increase = (function(){
     }
 })();
 
-var decrease = function(){
-    count--;
-};
+var decrease = (function(){
+    var count = 0;
+    return function () {
+        return count--;
+    }
+})();
 
 module.exports = {
     increase : increase,
