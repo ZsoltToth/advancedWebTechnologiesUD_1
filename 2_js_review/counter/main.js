@@ -1,5 +1,6 @@
 const counter = require('./counter');
 
-console.log(counter.cnt);
-counter.increase();
-console.log(counter.cnt);
+
+console.log(counter.increase());
+console.log(counter.increase());
+console.log(counter.increase());
