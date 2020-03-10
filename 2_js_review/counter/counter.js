@@ -13,7 +13,23 @@ var increase_closure_with_params = (function(initVal, step){
     }
 })(0,5);
 
+class Counter {
+    constructor(){
+        this.count = 0;
+    }
+    increase(){
+        this.count++;
+    }
+    decrease(){
+        this.count--;
+    }
+    getValue(){
+        return this.count;
+    }
+}
+
 module.exports = {
     counter_closure : increase_closure,
-    counter_cwp : increase_closure_with_params
+    counter_cwp : increase_closure_with_params,
+    counter_obj : new Counter()
 };
