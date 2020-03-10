@@ -12,7 +12,7 @@ console.log(priceCalculator.totalGrossPrice(products));
 priceCalculator.totalGrossPrice_cb(
     products,
     (totalGP)=>{
-        cosnole.log("Total Gross Price %f <-------- Callback Impl", totalGP);
+        console.log("Total Gross Price %f <-------- Callback Impl", totalGP);
     },
     (errorMsg) => {
         console.log("%s <---------- Callback Impl ERROR", errorMsg)
