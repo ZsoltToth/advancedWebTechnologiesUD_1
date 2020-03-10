@@ -5,7 +5,14 @@ class GrossPriceCalculator{
     }
 
     totalGrossPrice(products){
-        return 0;
+        return products.reduce(
+            (total, cur)=>{
+                if(cur.isTaxable){
+                    return total + cur.price * (100.0 + this.vatRate) / 100.0
+                }
+                return total + cur.price;
+            },
+            0);
     }
 
 }
