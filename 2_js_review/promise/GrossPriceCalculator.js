@@ -15,6 +15,10 @@ class GrossPriceCalculator{
             0);
     }
 
+    totalGrossPrice_cb(products, callback, error){
+
+    }
+
 }
 
 module.exports = new GrossPriceCalculator();
