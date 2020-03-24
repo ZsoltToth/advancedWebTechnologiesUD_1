@@ -15,12 +15,21 @@ for(let i = 0; i < 100; i++){
 }
 generateBook = (id) =>{
     titleLength = Math.round(Math.random() *3) + 1;
-
+    authorCount = Math.round(Math.random() *4) + 1;
+    bookAuthors = [];
+    for(let i = 0; i < authorCount; i++){
+        bookAuthors[i] = faker.random.arrayElement(authors);
+    }
     return {
         id : id,
         title : faker.lorem.words(titleLength),
-        teaser : faker.lorem.paragraph()
+        teaser : faker.lorem.paragraph(),
+        authors : bookAuthors
     }
 };
-
-console.log(generateBook(1));
+var books = [];
+for(let i = 0; i < 1000; i++){
+    books[i] = generateBook(i);
+}
+console.log(books);
+console.log(books[0]);
