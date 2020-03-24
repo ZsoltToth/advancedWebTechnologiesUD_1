@@ -13,5 +13,14 @@ for(let i = 0; i < 100; i++){
     author.id=i;
     authors.push(author);
 }
+generateBook = (id) =>{
+    titleLength = Math.round(Math.random() *3) + 1;
 
-console.log(authors);
+    return {
+        id : id,
+        title : faker.lorem.words(titleLength),
+        teaser : faker.lorem.paragraph()
+    }
+};
+
+console.log(generateBook(1));
