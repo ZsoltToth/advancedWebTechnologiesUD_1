@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Greetings from "./components/Greetings";
 import NewsFeed from "./components/NewsFeed";
 
 function App() {
   return (
-    <div className="App">
+    <div className={"container"}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Greetings name={"React"}/>

@@ -2,9 +2,9 @@ import React from 'react'
 
 function NewsItem(props){
     return (
-        <div>
-            <h2>{props.item.title}</h2>
-            <p>{props.item.content}</p>
+        <div className={"card"}>
+            <h2 className={"card-title"}>{props.item.title}</h2>
+            <p className={"card-body"}>{props.item.content}</p>
         </div>
     );
 }
