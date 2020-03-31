@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Greetings from "./components/Greetings";
+import NewsFeed from "./components/NewsFeed";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Greetings name={"React"}/>
+          <NewsFeed/>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
