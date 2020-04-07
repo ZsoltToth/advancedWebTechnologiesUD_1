@@ -22,6 +22,14 @@ class  ToDoList extends React.Component{
         this.setState(st);
     }
 
+    deleteToDoItem(todoItem){
+        let st = this.state;
+        st.todos = this.state.todos.filter((curTodo)=>{
+            return todoItem.name !== curTodo.name;
+        });
+        this.setState(st);
+    }
+
     render() {
         return (
             <div>
@@ -72,7 +80,6 @@ class  ToDoList extends React.Component{
                                 <button
                                     className="btn btn-info"
                                     onClick={()=>{
-                                        console.log(this.state.form)
                                         let st = this.state;
                                         st.todos.push(st.form);
                                         st.form = {name : '', description: '', estimation: 0.0};
@@ -101,7 +108,15 @@ class  ToDoList extends React.Component{
                                         <td>{todoItem.name}</td>
                                         <td>{todoItem.estimation}</td>
                                         <td>{todoItem.description}</td>
-                                        <td><button className="btn btn-danger">Delete</button></td>
+                                        <td>
+                                            <button
+                                                className="btn btn-danger"
+                                                onClick={(e)=>{
+                                                  this.deleteToDoItem(todoItem,e);
+                                                }}
+                                            >
+                                                Delete</button>
+                                        </td>
                                     </tr>
                                 )
                             })
