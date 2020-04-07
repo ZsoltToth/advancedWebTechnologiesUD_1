@@ -45,6 +45,11 @@ class  ToDoList extends React.Component{
                                 <input
                                     type="text"
                                     value={this.state.form.description}
+                                    onChange={(e)=>{
+                                        let st = this.state;
+                                        st.form.description = e.target.value;
+                                        this.setState(st);
+                                    }}
                                 />
                             </td>
                         </tr>
@@ -54,12 +59,26 @@ class  ToDoList extends React.Component{
                                 <input
                                     type="number"
                                     value={this.state.form.estimation}
+                                    onChange={(e)=>{
+                                        let st = this.state;
+                                        st.form.estimation = e.target.value;
+                                        this.setState(st);
+                                    }}
                                 />
                             </td>
                         </tr>
                         <tr>
                             <td colSpan={2}>
-                                <button className="btn btn-info">Add</button>
+                                <button
+                                    className="btn btn-info"
+                                    onClick={()=>{
+                                        console.log(this.state.form)
+                                        let st = this.state;
+                                        st.todos.push(st.form);
+                                        st.form = {name : '', description: '', estimation: 0.0};
+                                        this.setState(st);
+                                    }}
+                                >Add</button>
                             </td>
                         </tr>
                         </tbody>
