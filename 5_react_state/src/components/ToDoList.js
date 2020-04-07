@@ -69,7 +69,7 @@ class  ToDoList extends React.Component{
                                     value={this.state.form.estimation}
                                     onChange={(e)=>{
                                         let st = this.state;
-                                        st.form.estimation = e.target.value;
+                                        st.form.estimation = parseFloat(e.target.value);
                                         this.setState(st);
                                     }}
                                 />
@@ -95,16 +95,31 @@ class  ToDoList extends React.Component{
                 <h1>To Do List</h1>
                     <table>
                         <thead>
-                            <th>Name</th>
-                            <th>Estimation</th>
-                            <th>Description</th>
-                            <th>Action</th>
+                        <tr>
+                            <td>Name</td>
+                            <td>Estimation</td>
+                            <td>Description</td>
+                            <td>Action</td>
+                        </tr>
                         </thead>
+                        <tfoot>
+                        <tr>
+                        <td>Sum:</td>
+                        <td>{
+                            this.state.todos.reduce(
+                                (total,todo)=>{
+                                    return total + todo.estimation
+                                },0)
+                        }</td>
+                        <td>Count</td>
+                        <td>{this.state.todos.length}</td>
+                        </tr>
+                        </tfoot>
                         <tbody>
                         {
                             this.state.todos.map((todoItem)=>{
                                 return (
-                                    <tr>
+                                    <tr key={todoItem.name}>
                                         <td>{todoItem.name}</td>
                                         <td>{todoItem.estimation}</td>
                                         <td>{todoItem.description}</td>
