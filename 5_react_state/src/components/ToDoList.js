@@ -86,6 +86,28 @@ class  ToDoList extends React.Component{
                 </div>
                 <div className="row">
                 <h1>To Do List</h1>
+                    <table>
+                        <thead>
+                            <th>Name</th>
+                            <th>Estimation</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                        {
+                            this.state.todos.map((todoItem)=>{
+                                return (
+                                    <tr>
+                                        <td>{todoItem.name}</td>
+                                        <td>{todoItem.estimation}</td>
+                                        <td>{todoItem.description}</td>
+                                        <td><button className="btn btn-danger">Delete</button></td>
+                                    </tr>
+                                )
+                            })
+                        }
+                        </tbody>
+                    </table>
                 </div>
             </div>
         );
