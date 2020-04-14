@@ -64,10 +64,23 @@ class LotteryGeneratorForm extends React.Component{
                     <td colSpan={2}>
                         <button onClick={()=>{
                             console.log(this.state);
-                           ReactDOM.render(
-                               <LotteryPicks picks={[1,2,3,5,6]}/>,
-                               document.getElementById('picks')
-                           );
+                            let picks = [];
+                            for(let i = 0; i < this.state.pickCnt; i++){
+                                let currentPick = Math.round(
+                                    Math.random() *
+                                    (this.state.max - this.state.min)
+                                ) + this.state.min;
+                                if(picks.includes(currentPick)){
+                                    i--;
+                                }
+                                else{
+                                    picks.push(currentPick);
+                                }
+                            }
+                            ReactDOM.render(
+                                <LotteryPicks picks={picks}/>,
+                                document.getElementById('picks')
+                            );
                         }}
                         >Generate</button>
                     </td>
