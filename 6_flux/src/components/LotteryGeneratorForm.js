@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import LotteryPicks from './LotteryPicks'
 
 class LotteryGeneratorForm extends React.Component{
 
@@ -62,6 +64,10 @@ class LotteryGeneratorForm extends React.Component{
                     <td colSpan={2}>
                         <button onClick={()=>{
                             console.log(this.state);
+                           ReactDOM.render(
+                               <LotteryPicks picks={[1,2,3,5,6]}/>,
+                               document.getElementById('picks')
+                           );
                         }}
                         >Generate</button>
                     </td>
