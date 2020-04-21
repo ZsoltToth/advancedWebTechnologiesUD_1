@@ -1,4 +1,5 @@
 import React from 'react'
+import ShoppingCartActions from "../actions/ShoppingCartActions";
 
 class ShoppingCartForm extends React.Component{
 
@@ -59,7 +60,7 @@ class ShoppingCartForm extends React.Component{
                         <td colSpan={2}>
                             <button
                                 className="btn btn-info"
-                                onClick={()=>{console.log(this.state)}}
+                                onClick={()=>{ShoppingCartActions.insertItem(this.state)}}
                             >Add</button></td>
                     </tr>
                 </tbody>
