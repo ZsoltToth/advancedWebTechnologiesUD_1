@@ -4,14 +4,14 @@ class ShoppingCartActions {
 
     insertItem(item){
         dispatcher.handleViewAction({
-            command : 'INSERT_ITEM',
+            commandType : 'INSERT_ITEM',
             item : item
         });
     }
 
     removeItemById(id){
         dispatcher.handleViewAction({
-            command : 'REMOVE_BY_ID',
+            commandType : 'REMOVE_BY_ID',
             id : id
         });
     }
